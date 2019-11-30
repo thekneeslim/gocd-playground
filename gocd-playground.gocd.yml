@@ -25,6 +25,10 @@ pipelines:
                 - build:
                     source: "*"
                     destination: my_artifact_destination
+                - build:
+                    source: "./README.md"
+                    destination: file.md
+
       - second:
           jobs:
             get-artifact:
@@ -56,9 +60,11 @@ pipelines:
                     job: job-name
                     source: my_artifact_destination
                     destination: copied-configuration-from-previous-pipeline/
+                - fetch:
+                    pipeline: first_pipeline
+                    stage: first
+                    job: job-name
+                    source: file.md
+                    destination: file.md
                 - exec:
                     command: ls
-                - exec:
-                    command: ls
-                    argument:
-                      - ./copied-configuration-from-previous-pipeline
