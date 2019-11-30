@@ -40,6 +40,9 @@ pipelines:
                       destination: copied-configuration/
   second_pipeline:
     group: firstGroup
+    materials:
+      gocd-playgroud: # this is the name of material
+        git: https://github.com/thekneeslim/gocd-playground.git
     stages:
       - demo-dependency
           jobs:
