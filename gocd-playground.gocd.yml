@@ -1,0 +1,19 @@
+format_version: 9
+environments:
+  dev:
+    - pipelines:
+      - build
+
+pipelines:
+  build:
+    group: firstGroup
+    materials:
+      gocd-playgroud:
+        git: http://my.example.org/mygit.git
+    stages:
+      - build: # name of stage
+          jobs:
+            job-name: # name of the job
+              tasks:
+                - exec: # indicates type of task
+                    command: echo "Hello world"
