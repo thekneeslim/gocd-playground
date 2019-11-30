@@ -16,5 +16,8 @@ pipelines:
             job-name: # name of the job
               elastic_profile_id: demo-app
               tasks:
+                - exec:
+                    command: bash
+                        - chmod +x ./test.sh
                 - exec: # indicates type of task
                     command: ./test.sh
