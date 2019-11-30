@@ -6,7 +6,7 @@ pipelines:
     materials:
       myUpStream:
         pipeline: first_pipeline
-        stage: second
+        stage: first_pipeline_stage_one
     stages:
       - second_pipeline_stage_one:
           jobs:
