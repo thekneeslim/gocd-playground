@@ -3,6 +3,7 @@ environments:
   dev:
     pipelines:
       - first_pipeline
+      - second_pipeline
 
 pipelines:
   first_pipeline:
