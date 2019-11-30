@@ -2,7 +2,7 @@ format_version: 9
 
 pipelines:
   new_source_pipeline:
-    group: first
+    group: firstGroup
     materials:
       gocd-playgroud: # this is the name of material
         git: https://github.com/thekneeslim/gocd-playground.git
