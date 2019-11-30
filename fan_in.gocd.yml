@@ -1,32 +1,32 @@
-format_version: 9
-
-pipelines:
-  fan_in_pipeline:
-    group: firstGroup
-    materials:
-      oldSystem:
-        pipeline: second_pipeline
-        stage: second_pipeline_stage_one
-      newSource:
-        pipeline: new_source_pipeline
-        stage: new_source_first_stage
-    stages:
-      - fan_in_stage:
-          jobs:
-            list_all_artifacts:
-              elastic_profile_id: demo-app
-              tasks:
-                - fetch:
-                    pipeline: first_pipeline
-                    stage: first_pipeline_stage_one
-                    job: first_pipeline_job_one
-                    source: file.md
-                    destination: fan_in_file.md
-                - fetch:
-                    pipeline: new_source_pipeline
-                    stage: new_source_first_stage
-                    job: new_source_job
-                    source: file_from_new_source.txt
-                    destination: file_from_new_source_fan_in.md
-                - exec:
-                    command: ls
+#format_version: 9
+#
+#pipelines:
+#  fan_in_pipeline:
+#    group: firstGroup
+#    materials:
+#      oldSystem:
+#        pipeline: second_pipeline
+#        stage: second_pipeline_stage_one
+#      newSource:
+#        pipeline: new_source_pipeline
+#        stage: new_source_first_stage
+#    stages:
+#      - fan_in_stage:
+#          jobs:
+#            list_all_artifacts:
+#              elastic_profile_id: demo-app
+#              tasks:
+#                - fetch:
+#                    pipeline: first_pipeline
+#                    stage: first_pipeline_stage_one
+#                    job: first_pipeline_job_one
+#                    source: file.md
+#                    destination: fan_in_file.md
+#                - fetch:
+#                    pipeline: new_source_pipeline
+#                    stage: new_source_first_stage
+#                    job: new_source_job
+#                    source: file_from_new_source.txt
+#                    destination: file_from_new_source_fan_in.md
+#                - exec:
+#                    command: ls
