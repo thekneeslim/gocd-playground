@@ -3,6 +3,7 @@ environments:
   testing:
     pipelines:
       - build
+
 pipelines:
   build:
     group: firstGroup
