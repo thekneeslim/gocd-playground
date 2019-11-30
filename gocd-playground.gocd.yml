@@ -30,4 +30,4 @@ pipelines:
               elastic_profile_id: demo-app
               tasks:
                   - exec:
-                      command: ll
+                      command: ls
