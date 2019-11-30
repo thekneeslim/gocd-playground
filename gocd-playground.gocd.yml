@@ -1,6 +1,6 @@
 format_version: 9
 environments:
-  testing:
+  dev:
     pipelines:
       - build
 
