@@ -2,10 +2,10 @@ format_version: 9
 environments:
   dev:
     pipelines:
-      - build
+      - first_pipeline
 
 pipelines:
-  build:
+  first_pipeline:
     group: firstGroup
     materials:
       gocd-playgroud: # this is the name of material
@@ -32,8 +32,28 @@ pipelines:
                   - exec:
                       command: ls
                   - fetch:
-                      pipeline: build
+                      pipeline: first_pipeline
                       stage: first
                       job: job-name
                       source: my_artifact_destination
                       destination: copied-configuration/
+  second_pipeline:
+    group: firstGroup
+    stages:
+      - demo-dependency
+          jobs:
+            demo-dependency:
+              elastic_profile_id: demo-app
+              tasks:
+                - fetch:
+                    pipeline: first_pipeline
+                    stage: first
+                    job: job-name
+                    source: my_artifact_destination
+                    destination: copied-configuration-from-previous-pipeline/
+                - exec:
+                  command: ls
+                - exec:
+                  command: ls
+                  argument:
+                    - copied-configuration-from-previous-pipeline
