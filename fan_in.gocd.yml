@@ -17,7 +17,7 @@ pipelines:
               elastic_profile_id: demo-app
               tasks:
                 - fetch:
-                    pipeline: first_pipeline
+                    pipeline: first_pipeline/second_pipeline
                     stage: first_pipeline_stage_one
                     job: first_pipeline_job_one
                     source: file.md
