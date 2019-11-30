@@ -31,3 +31,9 @@ pipelines:
               tasks:
                   - exec:
                       command: ls
+                  - fetch:
+                      pipeline: build
+                      stage: first
+                      job: job-name
+                      source: configuration
+                      destination: copied-configuration/
