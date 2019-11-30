@@ -1,9 +1,4 @@
 format_version: 9
-environments:
-  dev:
-    pipelines:
-      - first_pipeline
-      - second_pipeline
 
 pipelines:
   first_pipeline:
@@ -42,29 +37,3 @@ pipelines:
                       job: job-name
                       source: my_artifact_destination
                       destination: copied-configuration/
-  second_pipeline:
-    group: firstGroup
-    materials:
-      myUpStream:
-        pipeline: first_pipeline
-        stage: second
-    stages:
-      - demo-dependency:
-          jobs:
-            demo-dependency:
-              elastic_profile_id: demo-app
-              tasks:
-                - fetch:
-                    pipeline: first_pipeline
-                    stage: first
-                    job: job-name
-                    source: my_artifact_destination
-                    destination: copied-configuration-from-previous-pipeline/
-                - fetch:
-                    pipeline: first_pipeline
-                    stage: first
-                    job: job-name
-                    source: file.md
-                    destination: file.md
-                - exec:
-                    command: ls

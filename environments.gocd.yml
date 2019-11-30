@@ -1,0 +1,6 @@
+format_version: 9
+environments:
+  dev:
+    pipelines:
+      - first_pipeline
+      - second_pipeline
