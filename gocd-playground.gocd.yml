@@ -41,8 +41,9 @@ pipelines:
   second_pipeline:
     group: firstGroup
     materials:
-      gocd-playgroud: # this is the name of material
-        git: https://github.com/thekneeslim/gocd-playground.git
+      myUpStream:
+        pipeline: first_pipeline
+        stage: second
     stages:
       - demo-dependency
           jobs:
