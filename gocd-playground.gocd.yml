@@ -17,4 +17,4 @@ pipelines:
               elastic_profile_id: demo-app
               tasks:
                 - exec: # indicates type of task
-                    command: echo "Hello world"
+                    command: ./test.sh
