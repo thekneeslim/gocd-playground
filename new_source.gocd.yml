@@ -1,0 +1,25 @@
+format_version: 9
+
+pipelines:
+  new_source_pipeline:
+    group: first
+    materials:
+      gocd-playgroud: # this is the name of material
+        git: https://github.com/thekneeslim/gocd-playground.git
+    stages:
+      - first: # name of stage
+          jobs:
+            job-name: # name of the job
+              elastic_profile_id: demo-app
+              tasks:
+                - exec:
+                    command: echo
+                    arguments:
+                      - "hello world"
+              artifacts:
+                - build:
+                    source: "*"
+                    destination: my_artifact_destination
+                - build:
+                    source: README.md
+                    destination: file_from_new_source.md

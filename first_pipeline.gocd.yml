@@ -23,17 +23,3 @@ pipelines:
                 - build:
                     source: README.md
                     destination: file.md
-
-      - second:
-          jobs:
-            get-artifact:
-              elastic_profile_id: demo-app
-              tasks:
-                  - exec:
-                      command: ls
-                  - fetch:
-                      pipeline: first_pipeline
-                      stage: first
-                      job: job-name
-                      source: my_artifact_destination
-                      destination: copied-configuration/
