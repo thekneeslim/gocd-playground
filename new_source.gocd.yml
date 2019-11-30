@@ -7,9 +7,9 @@ pipelines:
       gocd-playgroud: # this is the name of material
         git: https://github.com/thekneeslim/gocd-playground.git
     stages:
-      - first: # name of stage
+      - new_source_first_stage: # name of stage
           jobs:
-            job-name: # name of the job
+            new_source_job: # name of the job
               elastic_profile_id: demo-app
               tasks:
                 - exec:
@@ -21,5 +21,5 @@ pipelines:
                     source: "*"
                     destination: my_artifact_destination
                 - build:
-                    source: README.md
-                    destination: file_from_new_source.md
+                    source: new_source.txt
+                    destination: file_from_new_source.txt

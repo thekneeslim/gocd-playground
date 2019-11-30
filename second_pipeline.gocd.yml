@@ -8,21 +8,21 @@ pipelines:
         pipeline: first_pipeline
         stage: second
     stages:
-      - demo-dependency:
+      - second_pipeline_stage_one:
           jobs:
-            demo-dependency:
+            demo-second_pipeline_job_one:
               elastic_profile_id: demo-app
               tasks:
                 - fetch:
                     pipeline: first_pipeline
-                    stage: first
-                    job: job-name
+                    stage: first_pipeline_stage_one
+                    job: first_pipeline_job_one
                     source: my_artifact_destination
                     destination: copied-configuration-from-previous-pipeline/
                 - fetch:
                     pipeline: first_pipeline
-                    stage: first
-                    job: job-name
+                    stage: first_pipeline_stage_one
+                    job: first_pipeline_job_one
                     source: file.md
                     destination: file.md
                 - exec:

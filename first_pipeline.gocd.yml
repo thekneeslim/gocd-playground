@@ -7,9 +7,9 @@ pipelines:
       gocd-playgroud: # this is the name of material
         git: https://github.com/thekneeslim/gocd-playground.git
     stages:
-      - first: # name of stage
+      - first_pipeline_stage_one: # name of stage
           jobs:
-            job-name: # name of the job
+            first_pipeline_job_one: # name of the job
               elastic_profile_id: demo-app
               tasks:
                 - exec:

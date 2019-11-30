@@ -4,3 +4,4 @@ environments:
     pipelines:
       - first_pipeline
       - second_pipeline
+      - new_source_pipeline
