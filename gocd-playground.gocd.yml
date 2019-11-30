@@ -11,7 +11,7 @@ pipelines:
       gocd-playgroud: # this is the name of material
         git: https://github.com/thekneeslim/gocd-playground.git
     stages:
-      - build: # name of stage
+      - first: # name of stage
           jobs:
             job-name: # name of the job
               elastic_profile_id: demo-app
@@ -20,3 +20,14 @@ pipelines:
                     command: echo
                     arguments:
                     - "hello world"
+              artifacts:
+                - build:
+                    source: "*"
+                    destination: my_artifact_destination
+      - second:
+          jobs:
+            get-artifact:
+              elastic_profile_id: demo-app
+              tasks:
+                  - exec:
+                    command: ll
