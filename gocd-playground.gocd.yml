@@ -57,6 +57,8 @@ pipelines:
                     source: my_artifact_destination
                     destination: copied-configuration-from-previous-pipeline/
                 - exec:
-                  command: ls
-                  argument:
-                    - copied-configuration-from-previous-pipeline
+                    command: ls
+                - exec:
+                    command: ls
+                    argument:
+                      - copied-configuration-from-previous-pipeline
