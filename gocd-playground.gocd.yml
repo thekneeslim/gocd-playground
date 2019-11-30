@@ -19,6 +19,4 @@ pipelines:
                 - exec:
                     command: bash
                     arguments:
-                    - chmod +x ./test.sh
-                - exec: # indicates type of task
-                    command: ./test.sh
+                    - echo "hello world"
