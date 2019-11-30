@@ -58,7 +58,5 @@ pipelines:
                     destination: copied-configuration-from-previous-pipeline/
                 - exec:
                   command: ls
-                - exec:
-                  command: ls
                   argument:
                     - copied-configuration-from-previous-pipeline
