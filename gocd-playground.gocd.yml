@@ -61,4 +61,4 @@ pipelines:
                 - exec:
                     command: ls
                     argument:
-                      - copied-configuration-from-previous-pipeline
+                      - ./copied-configuration-from-previous-pipeline
