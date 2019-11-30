@@ -35,5 +35,5 @@ pipelines:
                       pipeline: build
                       stage: first
                       job: job-name
-                      source: configuration
+                      source: my_artifact_destination
                       destination: copied-configuration/
