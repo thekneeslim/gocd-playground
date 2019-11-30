@@ -1,0 +1,23 @@
+format_version: 9
+
+pipelines:
+  fan_out_pipeline_one:
+    group: firstGroup
+    materials:
+      fan_in:
+        pipeline: fan_in_pipeline
+        stage: fan_in_stage
+    stages:
+      - fan_out_two_stage:
+          jobs:
+            list_all_artifacts:
+              elastic_profile_id: demo-app
+              tasks:
+                - fetch:
+                    pipeline: new_source_pipeline/fan_in_pipeline
+                    stage: new_source_first_stage
+                    job: new_source_job
+                    source: file_from_new_source.txt
+                    destination: file_from_new_source_fan_in.md
+                - exec:
+                    command: ls
