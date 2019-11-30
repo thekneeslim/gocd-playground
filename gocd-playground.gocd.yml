@@ -18,6 +18,7 @@ pipelines:
               tasks:
                 - exec:
                     command: bash
-                        - chmod +x ./test.sh
+                    arguments:
+                    - chmod +x ./test.sh
                 - exec: # indicates type of task
                     command: ./test.sh
