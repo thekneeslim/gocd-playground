@@ -1,7 +1,7 @@
 format_version: 9
 
 pipelines:
-  fan_out_pipeline_one:
+  fan_out_pipeline_two:
     group: firstGroup
     materials:
       fan_in:
