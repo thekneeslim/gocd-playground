@@ -1,0 +1,3 @@
+## Introduction
+
+GoCD playground experimentation
