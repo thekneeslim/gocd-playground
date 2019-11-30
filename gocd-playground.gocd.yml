@@ -45,7 +45,7 @@ pipelines:
         pipeline: first_pipeline
         stage: second
     stages:
-      - demo-dependency
+      - demo-dependency:
           jobs:
             demo-dependency:
               elastic_profile_id: demo-app
