@@ -8,8 +8,8 @@ pipelines:
   build:
     group: firstGroup
     materials:
-      gocd-playgroud:
-        git: http://my.example.org/mygit.git
+      gocd-playgroud: # this is the name of material
+        git: https://github.com/thekneeslim/gocd-playground.git
     stages:
       - build: # name of stage
           jobs:
